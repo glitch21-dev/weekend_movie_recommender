@@ -1,0 +1,11 @@
+2026-05-08 23:30:28,791 - scheduler.scheduler - INFO - Scheduled movie 10 for 2026-05-09 20:00:00+00:00
+2026-05-08 23:30:28,791 - scheduler.scheduler - INFO - Scheduled movie 11 for 2026-05-10 20:00:00+00:00
+2026-05-08 23:41:36,409 - scheduler.scheduler - INFO - Scheduled movie 10 for 2026-05-09 20:00:00+00:00
+2026-05-08 23:41:36,409 - scheduler.scheduler - INFO - Scheduled movie 11 for 2026-05-10 20:00:00+00:00
+2026-05-08 23:46:59,352 - scheduler.scheduler - INFO - Scheduled movie 10 for 2026-05-09 20:00:00+00:00
+2026-05-08 23:46:59,352 - scheduler.scheduler - INFO - Scheduled movie 11 for 2026-05-10 20:00:00+00:00
+2026-05-08 23:47:59,641 - scheduler.scheduler - INFO - Scheduled movie 10 for 2026-05-09 20:00:00+00:00
+2026-05-08 23:47:59,641 - scheduler.scheduler - INFO - Scheduled movie 11 for 2026-05-10 20:00:00+00:00
+2026-05-08 23:49:36,022 - scheduler.scheduler - INFO - Scheduled movie 10 for 2026-05-09 20:00:00+00:00
+2026-05-08 23:49:36,022 - scheduler.scheduler - INFO - Scheduled movie 11 for 2026-05-10 20:00:00+00:00
+2026-05-09 00:43:02,984 - database.db_manager - ERROR - Error connecting to MySQL: 1045 (28000): Access denied for user 'movie_user'@'localhost' (using password: NO)
