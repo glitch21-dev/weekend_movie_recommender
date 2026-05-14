@@ -23,10 +23,10 @@ def scrape_command(args):
     db = DBManager()
     count = 0
     for movie in movies:
-        # Skip incomplete data
+       
         if not movie.get('title') or not movie.get('year'):
             continue
-        # For audience_score, we don't have it yet; set to 0
+
         movie['audience_score'] = movie.get('audience_score') or 0
         movie['vote_count'] = movie.get('vote_count') or 0
         db.insert_movie(movie)
@@ -71,7 +71,7 @@ def schedule_command(args):
                 movie = db.get_movie_by_id(mid)
                 print(f"  {movie['title']} - {dt.strftime('%A %H:%M')}")
     else:
-        # Manual schedule: expect movie ids as args
+    
         if not args.movie_ids:
             print("Please provide movie IDs to schedule, or use --auto")
             return
@@ -150,19 +150,16 @@ def main():
     parser = argparse.ArgumentParser(description="Movie Recommendation & Scheduling System")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    # Scrape command
     scrape_parser = subparsers.add_parser("scrape", help="Scrape movie data from IMDb")
     scrape_parser.add_argument("--pages", type=int, default=config.MAX_PAGES,
                                help="Number of search result pages to scrape")
     scrape_parser.set_defaults(func=scrape_command)
 
-    # Recommend command
     rec_parser = subparsers.add_parser("recommend", help="Generate movie recommendations")
     rec_parser.add_argument("--top_n", type=int, default=config.TOP_N_RECOMMENDATIONS,
                             help="Number of recommendations to show")
     rec_parser.set_defaults(func=recommend_command)
 
-    # Schedule command
     sched_parser = subparsers.add_parser("schedule", help="Schedule movies for weekend viewing")
     sched_parser.add_argument("--auto", action="store_true",
                               help="Automatically schedule top 2 recommendations")
@@ -170,7 +167,6 @@ def main():
                               help="Comma-separated list of movie IDs to schedule manually")
     sched_parser.set_defaults(func=schedule_command)
 
-    # Export calendar command
     export_parser = subparsers.add_parser("export_calendar", help="Export schedule to ICS file")
     export_parser.add_argument("--output", type=str, default=config.ICS_OUTPUT_FILE,
                                help="Output ICS file path")
